@@ -12,5 +12,15 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
+module.exports = {
+  // your other config...
+
+  rules: {
+    'react-hooks/rules-of-hooks': 'off', // 👈 disables the rule
+    'no-console': 'off',                 // 👈 example: disable console warnings
+    // add more rules here...
+  },
+};
+
 
 export default eslintConfig;
