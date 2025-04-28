@@ -1,0 +1,113 @@
+@for $i from 1 through $gridCount{
+  .large-#{$i}{
+    width: #{$width * $i}#{unquote("%")};
+  }
+}
+
+[class^="col"]{
+  position: relative;
+  padding: rem-calc(0 0);
+}
+.cols{
+  float: left;
+  &.first{
+    padding-left: 0 !important;
+  }
+  &.last{
+    padding-right: 0 !important;
+  }
+}
+.show-for-large{
+  display: block;
+}
+.show-for-small,
+.show-for-medium,
+.show-xlg,
+.hide-for-large{
+  display: none;
+}
+// Extra large devices (large desktops, 1200px and down)
+@include respond-to(xlarge) {
+  @for $i from 1 through $gridCount{
+    .extra-large-#{$i}{
+      width: #{$width * $i}#{unquote("%")};
+    }
+  }
+  .show-for-large, .show-xlg{
+    display: block;
+  }
+  .show-for-medium,
+  .hide-for-large{
+    display: none;
+  }
+}
+// Large devices (desktops, 992px and down)
+@include respond-to(large) {
+  @for $i from 1 through $gridCount{
+    .large-#{$i}{
+      width: #{$width * $i}#{unquote("%")};
+    }
+  }
+  .show-for-large{
+    display: block;
+  }
+  .show-for-medium,
+  .hide-for-large{
+    display: none;
+  }
+}
+// Medium devices (tablets, 768px and down)
+@include respond-to(medium) {
+  @for $i from 1 through $gridCount{
+    .medium-#{$i}{
+      width: #{$width * $i}#{unquote("%")};
+    }
+  }
+  .mt-md-50{
+    margin-top:  rem-calc(50) !important;
+  }
+  .hide-for-medium{
+    display: none !important;
+  }
+  .show-for-medium{
+    display: block;
+  }
+  .show-for-large{
+    display: none;
+  }
+}
+// Small devices (landscape phones, 576px and down)
+@include respond-to(small) {
+  @for $i from 1 through $gridCount{
+    .small-#{$i}{
+      width: #{$width * $i}#{unquote("%")};
+    }
+  }
+  .show-for-small{
+    display: block !important;
+  }
+  .hide-for-small{
+    display: none !important;
+  }
+}
+// Extra small devices (portrait phones, less than 320px)
+@include respond-to(xsmall) {
+  @for $i from 1 through $gridCount{
+    .col-xs-#{$i}{
+      width: #{$width * $i}#{unquote("%")};
+    }
+  }
+  .show-xs{
+    display: block;
+  }
+}
+
+
+@include media-breakpoint-only(xlarge){
+  .show-for-smallall{
+    display:  none;
+  }
+  .show-large{
+    display: block;
+  }
+}

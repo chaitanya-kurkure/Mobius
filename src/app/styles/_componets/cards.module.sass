@@ -1,0 +1,35 @@
+.cards-container-wrapper
+  .cards-container
+    display: flex
+    flex-wrap: wrap
+    gap: 40px
+    line-height: 1
+    justify-content: center
+    .cards-container-card
+      min-width: 320px
+      width: calc(33.33% - 40px)
+      border: 2px solid #0649E7
+      border-radius: 35px
+      padding: 30px
+      min-height: 600px
+      display: flex
+      flex-direction: column
+      .inline-block
+        display: inline-block
+      .popular_cta
+        border: 1px solid #0649E7
+        border-radius: 35px
+        padding: 10px
+      img
+        max-width: unset
+      .button-blue
+        transition: 0.3s ease-in-out
+        background: #0649e7
+        border: 1px solid #0649e7
+        border-radius: 36px
+        width: max-content
+        padding-inline: 20px
+        padding-block: 10px
+        &:hover
+          background: white
+          color: #0649e7        
