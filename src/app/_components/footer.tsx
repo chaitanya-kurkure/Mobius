@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="w-90 centered">
           <div>
             <Image
-              src="/images/footer-logo.png"
+              src="/images/footers-logo.png"
               alt="Footer logo"
               width={150}
               height={90}
